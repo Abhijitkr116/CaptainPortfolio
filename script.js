@@ -121,7 +121,7 @@ t1.from(".herosection .h2-2", {
     delay: -2
 },"h21")
 t1.to(".herosection h2 span", {
-    fontSize: "5vw",
+    fontSize: "7vw",
     color: "#a8bd64",
     delay: 1
 })
@@ -228,3 +228,6 @@ gsap.from(".Footer .foot",{
         start: "top 150%",
     }
 })
+
+
+
