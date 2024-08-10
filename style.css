@@ -113,7 +113,7 @@ nav a{
     font-size: 12vw;
     font-weight: 300;
     text-transform: uppercase;
-    line-height: 10vw;
+    line-height: 6vw;
     text-align: center;
     /* background-color: red; */
     width: 70%;
@@ -439,6 +439,7 @@ nav a{
 
     .Services {
         padding: 4vw 5vw;
+        overflow: hidden;
     }
     .Services .heading h1 {
         font-size: 3.5rem;
@@ -461,11 +462,11 @@ nav a{
         padding: 25vw 6vw 8vw 6vw;
     }
     .Footer h1{
-        font-size: 8vw;
-        line-height: 4rem;
+        font-size: 9vw;
+        line-height: 3.7rem;
     }
     .Footer h1 span{
-        font-size: 8.2vw;
+        font-size: 9.2vw;
     }
     .Footer h1 a{
         font-size: 0.8rem;
