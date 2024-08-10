@@ -392,3 +392,89 @@ nav a{
 .Footer .foots p{
     font-family: samsung;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 600px){
+    .herosection h1 {
+        font-size: 14vw;
+        line-height: 12.5vw;
+        margin-bottom: 0.1rem;
+        width: 100%;
+    }
+    .herosection h2 {
+        font-size: 5vw;
+        width: 80%;
+        padding-left: 0.2rem;
+        letter-spacing: 0.2rem;
+    }
+
+
+
+
+
+    .About {
+        padding: 1vw 5vw;
+    }
+    .About h1 {
+        font-size: 3.5rem;
+    }
+    .About p {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        line-height: 2rem;
+        opacity: 1;
+    }
+
+
+    .Services {
+        padding: 4vw 5vw;
+    }
+    .Services .heading h1 {
+        font-size: 3.5rem;
+    }
+    .Services .heading p {
+        font-size: 1.1rem;
+        padding: 0vw;
+    }
+
+
+    .Projects h1 {
+        top: -1rem;
+        left: 1vw;
+        font-size: 24.8vw;
+    }
+
+
+
+    .Footer{
+        padding: 25vw 6vw 8vw 6vw;
+    }
+    .Footer h1{
+        font-size: 8vw;
+        line-height: 4rem;
+    }
+    .Footer h1 span{
+        font-size: 8.2vw;
+    }
+    .Footer h1 a{
+        font-size: 0.8rem;
+    }
+
+
+
+
+    .Footer .foots p{
+        font-size: 0.9rem;
+    }
+}
