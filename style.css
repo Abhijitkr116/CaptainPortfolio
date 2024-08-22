@@ -28,6 +28,7 @@ html, body{
     left: -100%;
     z-index: 100;
     padding: 3rem;
+    overflow: hidden;
 }
 .menus .close{
     /* background-color: red; */
