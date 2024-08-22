@@ -16,10 +16,80 @@ html, body{
     height: 100%;
     width: 100%;
 }
-/* main{
+
+.menus{
     height: 100%;
     width: 100%;
-} */
+    position: absolute;
+    /* background: rgba( 255, 255, 255, 0.15 ); */
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur( 11px );
+    top: 0;
+    left: -100%;
+    z-index: 100;
+    padding: 3rem;
+}
+.menus .close{
+    /* background-color: red; */
+    display: flex;
+    justify-content: end;
+}
+.menus .close i{
+    color: #000;
+    font-size: 3rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    background-color: #fefae0;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.menus .close i:hover{
+    transform: rotate(90deg);
+}
+.menus .close i:active{
+    transform: rotate(180deg);
+    scale: 0.9;
+}
+.menus .links{
+    /* background-color: #dda15e; */
+    /* height: 600px; */
+    padding: 6% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.menus .links .link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    padding-left: 4rem;
+    /* background-color: #606c38; */
+
+}
+.menus .links .link a{
+    text-decoration: none;
+    font-family: samsung;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 900;
+    width: 100%;
+}
+.menus .links .link i{
+    color: #fff;
+    font-size: 5rem;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.menus .links .link:hover i{
+    opacity: 1;
+}
+
+
+
 
 
 .reveal .parent{
@@ -305,7 +375,7 @@ nav a{
     text-transform: uppercase;
 }
 .Projects .project{
-    height: 600px;
+    height: 630px;
     width: 400px;
     /* border: 5px solid #333; */
     border-radius: 0.5rem;
@@ -320,7 +390,7 @@ nav a{
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 0.2rem;
+    border-radius: 1.2rem;
 }
 
 

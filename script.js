@@ -38,6 +38,69 @@ init();
 
 
 
+// function menu(){
+//     let flag = 0;
+//     const close = document.querySelector(".ri-close-line"); 
+//     const menuPage = document.querySelector(".menus"); 
+//     const menu = document.querySelector("nav .menu"); 
+
+//     menu.addEventListener('click',()=>{
+//         console.log(flag);
+//         if(flag == 0){
+//             menuPage.style.left = "0";
+//             flag = 1;
+//         }
+        
+//     })
+//     close.addEventListener('click',()=>{
+//         console.log(flag);
+//         if(flag == 1){
+//             menuPage.style.left = "-100%";
+//             flag = 0;
+//         }
+//     })
+// }
+// menu();
+
+
+
+function menu() {
+    let flag = 0;
+    const close = document.querySelector(".ri-close-line");
+    const menuPage = document.querySelector(".menus");
+    const menu = document.querySelector("nav .menu");
+
+    // // Set initial position of the menuPage off-screen
+    // gsap.set(menuPage, { left: "-100%" });
+
+    menu.addEventListener('click', () => {
+        console.log(flag);
+        if (flag == 0) {
+            // Use GSAP to animate the menuPage sliding in
+            gsap.to(menuPage, { 
+                duration: 1.5,
+                left: "0%", 
+                ease: "elastic.out(1,0.6)",
+            });
+            flag = 1;
+        }
+    });
+
+    close.addEventListener('click', () => {
+        console.log(flag);
+        if (flag == 1) {
+            // Use GSAP to animate the menuPage sliding out
+            gsap.to(menuPage, { 
+                duration: 1.5, 
+                left: "-100%", 
+                ease: "elastic.out(1,0.6)",
+            });
+            flag = 0;
+        }
+    });
+}
+
+menu();
 
 
 
@@ -123,7 +186,7 @@ t1.from(".herosection .h2-2", {
 t1.to(".herosection h2 span", {
     fontSize: "7vw",
     color: "#a8bd64",
-    delay: 1
+    delay: -1
 })
 
 var t2 = gsap.timeline();
