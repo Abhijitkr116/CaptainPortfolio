@@ -26,6 +26,15 @@ ScrollTrigger.scrollerProxy("main", {
     pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
 });
 
+gsap.to(".sticker", {
+    rotation: 360,         // Full rotation
+    duration: 5,           // Time for one rotation (in seconds)
+    repeat: -1,            // Infinite loop
+    ease: "linear",        // Smooth constant speed
+    background: "linear-gradient(219deg, rgba(157,78,221,1) 8%, rgba(255,255,255,1) 100%)", // Swap the colors
+    yoyo: true,            // Reverses the animation back and forth
+    backgroundPosition: "100%", // Animate the background position
+});
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
