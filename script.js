@@ -113,9 +113,6 @@ menu();
 
 
 
-
-
-
 const videos = [
     document.getElementById('video1'),
     document.getElementById('video2'),
@@ -140,6 +137,34 @@ function circleMouseFollower(){
         document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`
     })
 }
+
+
+var rotate = 0;
+var diffrot = 0;
+
+document.querySelectorAll(".skill").forEach(function(elem){
+
+    elem.addEventListener("mouseleave", function(dets){
+        gsap.to(elem.querySelector(".skill img"),{
+            opacity: 0,
+            ease: Power3,
+            duration: .5,
+        });
+    });
+
+    elem.addEventListener("mousemove", function(dets){
+        var diff = dets.clientY - elem.getBoundingClientRect().top;
+        diffrot = dets.clientX - rotate;
+        rotate = dets.clientX;
+        gsap.to(elem.querySelector(".skill img"),{
+            opacity: 1,
+            ease: Power3,
+            top: diff,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-20,20,diffrot * 0.5),
+        });
+    });
+});
 
 circleMouseFollower();
 
