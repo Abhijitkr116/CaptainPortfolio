@@ -34,12 +34,14 @@ html, body{
     height: 100%;
     width: 100%;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 .menus{
     height: 100%;
     width: 100%;
     position: absolute;
-    /* background: rgba( 255, 255, 255, 0.15 ); */
     background: rgb(0, 0, 0);
     backdrop-filter: blur( 11px );
     top: 0;
@@ -49,7 +51,6 @@ html, body{
     overflow: hidden;
 }
 .menus .close{
-    /* background-color: red; */
     display: flex;
     justify-content: end;
 }
@@ -70,8 +71,6 @@ html, body{
     scale: 0.9;
 }
 .menus .links{
-    /* background-color: #dda15e; */
-    /* height: 600px; */
     padding: 6% 0;
     width: 100%;
     display: flex;
@@ -96,10 +95,14 @@ html, body{
     font-size: 4rem;
     font-weight: 900;
     width: 100%;
+    transition: all 0.3s ease;
+}
+.menus .links .link a:hover{
+    color: red;
 }
 .menus .links .link i{
-    color: #fff;
-    font-size: 5rem;
+    color: red;
+    font-size: 4rem;
     opacity: 0;
     transition: all 0.5s ease;
 }
@@ -127,13 +130,12 @@ nav{
     display: flex;
     justify-content: end;
     gap: 2rem;
-    mix-blend-mode: difference;
     /* mix-blend-mode: difference; */
     padding: 1rem 2rem;
     /* text-align: center; */
     background: rgba( 255, 255, 255, 0 );
     backdrop-filter: blur( 8.5px );
-    z-index: 100;
+    z-index: 200;
 }
 nav a{
     text-decoration: none;
@@ -153,104 +155,16 @@ nav a{
 }
 
 
-
-
-
-/* On hold */
-/* .herosection{
-    height: 100vh;
-    width: 100%;
-    background-color: #fff;
-    padding: 0 5vw;
-    display: flex;
-}
-.herosection .part-1{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.herosection .part-1 h1{
-    font-family: samsung;
-    font-size: 4.5rem;
-    line-height: 5.5rem;
-    color: #7b2cbf;
-}
-.herosection .part-1 p{
-    font-family: appler;
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-    color: #555;
-}
-.herosection .part-1 a{
-    font-family: appler;
-    text-decoration: none;
-    background: linear-gradient(74deg, rgba(123,44,191,1) 0%, rgba(255,255,255,1) 100%); 
-    color: #fff;
-    padding: 1rem 1rem;
-    border-radius: 0.2rem;
-    margin-top: 1.4rem;
-    text-align: center;
-    width: 250px;
-    transition: all 0.3s ease;
-}
-.herosection .part-1 a:hover{
-    background: rgb(157,78,221);
-background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 100%); 
-}
-
-.herosection .part-2{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.herosection .part-2 .sticker{
-    width: 380px;
-    height: 380px;
-    background: rgb(157,78,221);
-    background: linear-gradient(219deg, rgba(157,78,221,1) 8%, rgba(255,255,255,1) 100%); 
-    position: relative;
-    border-radius: 50%;
-} */
-
 .herosection{
     height: 100vh;
     width: 100vw;
-    background-color: #111;
-    /* background-color: #E9E9E9; */
-    /* background-color: #FFFFE4; */
-    position: relative;
+    /* background-color: #0c0e0c; */
+    background-color: #050301;
     overflow: hidden;
     padding: 0 5vw;
 }
-.herosection .title{
-    width: 100%;
-    display: flex;
-    align-items: end;
-    gap: 1rem;
-    position: absolute;
-    bottom: 0;
-    /* border-bottom: 1px solid #fff; */
-}
-.herosection .title h1{
-    font-family: Jost;
-    text-transform: uppercase;
-    font-size: 14rem;
-    line-height: 7rem;
-    color: #e9e9e967;
-}
-.herosection .title h3{
-    font-family: editorial;
-    font-size: 5rem;
-    line-height: 2.6rem;
-    color: #E9E9E9;
-}
 
 .herosection .cover{
-    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,10 +183,22 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
     color: #fff;
     font-size: 2rem;
 }
+.herosection .contents .Author{
+    display: flex;
+    gap: 1rem;
+}
 .herosection .contents h1{
     font-family: tommyb;
     font-size: 6vw;
     font-weight: 100;
+}
+.herosection .contents .srma{
+    position: relative;
+}
+.herosection .contents .srma span{
+    position: absolute;
+    bottom: 0.07rem;
+    right: 0.07rem;
 }
 .herosection .contents h1 span{
     color: #3b3b3b;
@@ -311,10 +237,9 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
 
 
 /* About */
-.About{
+/* .About{
     min-height: 100vh;
     width: 100%;
-    /* background-color: #fafc; */
     background-color: #fefae0;
     padding: 7vw 18vw;
     display: flex;
@@ -331,36 +256,31 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
     text-transform: uppercase;
 }
 .About p{
-    /* text-transform: uppercase; */
-    
     font-size: 2.8rem;
     color: #606c38;
     text-align: center;
-    /* letter-spacing: 5rem; */
     line-height: 3.5rem;
     font-family: Montserrat;
 }
 .About p span{
     color: #dda15e;
     font-family: editorial;
-}
+} */
 
 .section2{
-    padding-right: 10vw;
     width: 100%;
     height: 100vh;
-    background-color: #111;
-    color: white;
+    background-color: #050301;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 .section2 .skill{
-    width: 100%;
+    width: 95%;
     border-top: 1px solid #888;
-    margin-left: 30px;
-    padding: 2vw 1vw;
-    padding-right: 0;
+    padding: 2vw 1vw;   
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -377,27 +297,40 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
     position: absolute;
     z-index: 99;
     height: 140%;
+    border: 1px solid #fff;
 }
-.section2 .skill h1{
-    font-family: tommyl;
+.section2 .skill a, .section2 .skill p{
+    text-decoration: none;
+    font-family: tommyr;
     font-size: 5vw;
+    /* width: 10%; */
     text-transform: uppercase;
     opacity: .7;
     transition: all ease 0.4s;
+    color: #fffbf4;
+    font-weight: 100;
 }
+.section2 .skill p{
+    font-size: 1.2vw;
+    font-family: editorial;
+}
+/* .section2 .skill a::selection {
+    color: #111;
+    background: #fffbf4;
+} */
 .section2 .skill:hover{
-    h1{
+    a{
         margin-left: 2rem;
-        color: gray;
+        color: red;
+    }
+    p{
+        color: red;
     }
 }
 .section2 .skill:hover{
-    /* background-color: #000000; */
     color: #fefefe;
 } 
-.section2 .skill:hover h1{
-    color: #fefefe;
-} 
+
 
 
 /* Services */
@@ -412,14 +345,14 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
 .Services .heading h1{
     font-size: 5rem;
     text-transform: uppercase;
-    color: #606c38;
-    font-family: chillax;
+    color: #fefae0;
+    font-family: tommyb;
     font-weight: 100;
     text-align: center;
 }
 .Services .heading p{
     font-size: 1.2rem;
-    color: #606c38;
+    color: #999;
     font-family: samsung;
     font-weight: 100;
     text-align: center;
@@ -433,23 +366,23 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
     display: flex;
     justify-content: space-between;
 }
-.Services .skills .skill{
+.Services .skills .skilli{
     height: 100%;
     width: 32%;
-    background-color: #fefae0;
+    background-color: #5454547b;
     /* background-color: #606c38; */
     border-radius: 0.5rem;
     padding: 2rem 1.5rem;
     /* color: #fefefe; */
-    color: #606c38;
+    color: #fefefe;
 }
-.Services .skills .skill h2{
+.Services .skills .skilli h2{
     font-size: 2rem; 
     font-family: samsung;
     margin-bottom: 0.8rem;
     /* color: #606c38; */
 }
-.Services .skills .skill .images{
+.Services .skills .skilli .images{
     height: 40px;
     width: 100%;
     /* background-color: #283618; */
@@ -457,14 +390,14 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
     display: flex;
     gap: 0.5rem;
 }
-.Services .skills .skill .images img{
+.Services .skills .skilli .images img{
     height: 100%;
     width: 40px;
     opacity: 90%;
     /* background-color: #7b875542; */
     padding: 0.2rem;
 }
-.Services .skills .skill p{
+.Services .skills .skilli p{
     font-size: 1rem; 
     font-family: poppins;
     letter-spacing: 0.05rem;
@@ -472,7 +405,7 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
 }
 
 
-.Services .skills .skill ul{
+.Services .skills .skilli ul{
     width: 100%;
     /* height: 30vh; */
     border-top: 2px #11111143 solid;
@@ -481,21 +414,22 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
     /* background-color: #a8bd64; */
     list-style: none;
 }
-.Services .skills .skill ul li i{
+.Services .skills .skilli ul li i{
     font-size: 1.3rem;
-    color: #606c38;
+    color: #fefefe;
     /* color: #fefefe; */
 }
-.Services .skills .skill ul li{
+.Services .skills .skilli ul li{
     font-size: 1.1rem;
-    font-family: poppins;
+    font-family: samsung;
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: #606c38;;
+    color: #fefefe;;
     /* color: #fefefe; */
     margin-top: 0.3rem;
-    font-weight: 500;
+    font-weight: 100;
+    letter-spacing: 0.03rem;
     text-transform: capitalize;
 }
 
@@ -624,97 +558,79 @@ background: linear-gradient(66deg, rgba(157,78,221,1) 7%, rgba(255,255,255,1) 10
 
 
 @media all and (max-width: 600px){
-    .herosection h1 {
-        font-size: 14vw;
-        line-height: 12.5vw;
-        margin-bottom: 0.1rem;
+    .herosection{
+        /* background-color: #3b3b3b; */
+        padding: 0;
+    }
+    .herosection .cover{
+        /* background-color: #c08541; */
+        flex-direction: column-reverse;
+    }
+
+    .herosection .profile{
+        height: 40%;
         width: 100%;
     }
-    .herosection h2 {
-        font-size: 5vw;
-        width: 80%;
-        padding-left: 0.2rem;
-        letter-spacing: 0.2rem;
-    }
-
-    .menus .close i{
-        font-size: 2rem;
-        padding: 0.4rem 0.5rem;
-    }
-    .menus .links{
-        margin-top: 15vw;
-        padding: 6% 0;
-        gap: 2rem;
-    }
-    .menus .links .link{
-        width: 80%;
-        padding-left: 0rem; 
-    }
-    .menus .links .link a{
-        font-size: 2.5rem;
-        font-weight: 100;
-    }
-    .menus .links .link i{
-        font-size: 3rem;
-    }
-    
-    
-
-
-
-    .About {
-        padding: 1vw 5vw;
-    }
-    .About h1 {
-        font-size: 3.5rem;
-    }
-    .About p {
-        font-size: 1.5rem;
-        letter-spacing: 0.1rem;
-        line-height: 2rem;
-        opacity: 1;
+    .herosection .profile .circle{
+        height: 300px;
+        width: 300px;
+        margin-top: 2rem;
     }
 
 
-    .Services {
-        padding: 4vw 5vw;
-        overflow: hidden;
+    .herosection .contents{
+        height: 35%;
+        width: 100%;
+        justify-content: start;
+        padding: 0 3vw;
+        gap: 0.2rem;
     }
-    .Services .heading h1 {
-        font-size: 3.5rem;
+
+    .herosection .cover .contents h1{
+        font-family: tommyr;
+        font-size: 9.8vw;
+        text-align: center;
+        width: 100%;
+        margin-top: 2rem;
     }
-    .Services .heading p {
-        font-size: 1.1rem;
-        padding: 0vw;
+    .herosection .contents h1 span{
+        /* color: #3b3b3b; */
+        color: #fefefe;
+    }
+    .herosection .contents p{
+        font-size: 4vw;
+        text-align: justify;
+        padding: 0 0.7rem;
+        line-height: 6vw;
+    }
+
+    /* Section2 */
+    .section2{
+        height: 80vh;
+        justify-content: start;
+        padding: 40vw 0 0 0;
+    }
+    .section2 .skill{
+        width: 95%;
+        border-top: 1px solid #888;
+        padding: 3vw 1vw;   
+    }
+    .section2 .skill a{
+        font-family: tommyb;
+        font-size: 8.5vw;
+    }
+    .section2 .skill:hover{
+        a{
+            margin-left: 1rem;
+        }
+    }
+    .section2 .skill .work{
+        display: none;
     }
 
 
-    .Projects h1 {
-        top: -1rem;
-        left: 1vw;
-        font-size: 24.8vw;
-    }
-
-
-
-    .Footer{
-        padding: 32vw 6vw 8vw 6vw;
-    }
-    .Footer h1{
-        font-size: 9vw;
-        line-height: 3.7rem;
-    }
-    .Footer h1 span{
-        font-size: 9.2vw;
-    }
-    .Footer h1 a{
-        font-size: 0.8rem;
-    }
-
-
-
-
-    .Footer .foots p{
-        font-size: 0.9rem;
-    }
+    /* Services */
+.Services{
+    overflow: hidden;
+}
 }

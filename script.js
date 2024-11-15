@@ -11,7 +11,7 @@ function init(){
 const locoScroll = new LocomotiveScroll({
     el: document.querySelector("main"),
     smooth: true,
-    lerp: 0.04
+    lerp: 0.07
 });
 
 locoScroll.on("scroll", ScrollTrigger.update);
