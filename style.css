@@ -37,6 +37,9 @@ html, body{
 body::-webkit-scrollbar {
     display: none;
 }
+main{
+    background-color: #050301;
+}
 
 .menus{
     height: 100%;
@@ -159,7 +162,7 @@ nav a{
     height: 100vh;
     width: 100vw;
     /* background-color: #0c0e0c; */
-    background-color: #050301;
+    /* background-color: #050301; */
     overflow: hidden;
     padding: 0 5vw;
 }
@@ -270,7 +273,7 @@ nav a{
 .section2{
     width: 100%;
     height: 100vh;
-    background-color: #050301;
+    /* background-color: #050301; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -340,10 +343,11 @@ nav a{
     padding: 4vw 7vw;
     /* background-color: #dda15e; */
     background-color: #111;
+    overflow: hidden;
 }
 
 .Services .heading h1{
-    font-size: 5rem;
+    font-size: 6vw;
     text-transform: uppercase;
     color: #fefae0;
     font-family: tommyb;
@@ -421,16 +425,20 @@ nav a{
 }
 .Services .skills .skilli ul li{
     font-size: 1.1rem;
-    font-family: samsung;
+    font-family: poppins;
     display: flex;
     align-items: center;
     gap: 1rem;
     color: #fefefe;;
     /* color: #fefefe; */
     margin-top: 0.3rem;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 0.03rem;
     text-transform: capitalize;
+}
+.Services .skills .skilli ul li::selection {
+    color: #111;
+    background: #fffbf4;
 }
 
 
@@ -585,23 +593,32 @@ nav a{
         padding: 0 3vw;
         gap: 0.2rem;
     }
-
+    
+    .herosection .cover .contents .Author{
+        /* background-color: #3b3b3b; */
+        width: 100%;
+        padding-left: 2vw;
+        gap: 0;
+    }
     .herosection .cover .contents h1{
         font-family: tommyr;
         font-size: 9.8vw;
         text-align: center;
         width: 100%;
         margin-top: 2rem;
+        /* background-color: red; */
     }
-    .herosection .contents h1 span{
-        /* color: #3b3b3b; */
-        color: #fefefe;
+    .herosection .contents .srma span{
+        position: absolute;
+        bottom: 0.1vw;
+        right: 3vw;
     }
     .herosection .contents p{
         font-size: 4vw;
         text-align: justify;
         padding: 0 0.7rem;
         line-height: 6vw;
+        letter-spacing: 0.01rem;
     }
 
     /* Section2 */
@@ -624,13 +641,39 @@ nav a{
             margin-left: 1rem;
         }
     }
+    .section2 .skill p{
+        font-size: 2vw;
+        font-family: editorial;
+    }
     .section2 .skill .work{
         display: none;
     }
 
 
     /* Services */
-.Services{
-    overflow: hidden;
-}
+    .Services{
+        padding: 5vw 2vw;
+        /* background-color: #dda15e; */
+    }
+    .Services .heading h1{
+        font-size: 9vw;
+    }
+    .Services .heading p{
+        font-size: 3.5vw;
+        padding: 0 8vw;
+        line-height: 4vw;
+    }
+    .Services .skills .skill-1{
+        height: 100%;
+        width: 100%;
+        background-color: #5454547b;
+        /* background-color: #606c38; */
+        border-radius: 0.5rem;
+        padding: 2rem 1.5rem;
+        /* color: #fefefe; */
+        color: #fefefe;
+    }
+    .Services .skills .skill-2, .Services .skills .skill-3{
+        display: none;
+    }
 }
