@@ -566,6 +566,9 @@ nav a{
 
 
 @media all and (max-width: 600px){
+    body{
+        overflow: hidden;
+    }
     .herosection{
         /* background-color: #3b3b3b; */
         padding: 0;
@@ -582,7 +585,7 @@ nav a{
     .herosection .profile .circle{
         height: 300px;
         width: 300px;
-        margin-top: 2rem;
+        margin-top: 0;
     }
 
 
