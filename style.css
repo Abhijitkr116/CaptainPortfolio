@@ -566,9 +566,6 @@ nav a{
 
 
 @media all and (max-width: 600px){
-    body{
-        overflow: hidden;
-    }
     .herosection{
         /* background-color: #3b3b3b; */
         padding: 0;
@@ -629,6 +626,9 @@ nav a{
         height: 80vh;
         justify-content: start;
         padding: 40vw 0 0 0;
+    }
+    .section2{
+        overflow: hidden;
     }
     .section2 .skill{
         width: 95%;
