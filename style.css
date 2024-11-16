@@ -664,8 +664,10 @@ nav a{
     }
     .Services .heading p{
         font-size: 3.5vw;
-        padding: 0 8vw;
-        line-height: 4vw;
+        padding: 0 5vw;
+        line-height: 5.5vw;
+        margin-top: 0.5rem;
+        color: #999;
     }
     .Services .skills .skill-1{
         height: 100%;
