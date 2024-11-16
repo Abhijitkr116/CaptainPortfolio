@@ -612,6 +612,7 @@ nav a{
         position: absolute;
         bottom: 0.1vw;
         right: 3vw;
+        color: #e3d933;
     }
     .herosection .contents p{
         font-size: 4vw;
