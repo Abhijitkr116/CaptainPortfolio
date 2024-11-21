@@ -102,11 +102,16 @@ html,body{
 .swiper-slide-active {
     transform: scale(1.1); /* Add a zoom effect to the active slide */
 }
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+    display: none !important;
+}
 
 /* Responsive Design */
 @media all and (max-width: 600px) {
     .swiper-slide {
-        height: 60%;
-        max-width: 90%; /* Use most of the screen width */
+        height: 70%;
+        max-width: 85%; /* Use most of the screen width */
     }
 }
