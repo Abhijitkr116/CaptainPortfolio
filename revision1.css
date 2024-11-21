@@ -92,7 +92,7 @@ html,body{
     transition: transform 0.3s ease;
 }
 
-.swiper-slide img {
+.swiper-slide video{
     height: 100%;
     width: 100%;
     object-fit: cover;
