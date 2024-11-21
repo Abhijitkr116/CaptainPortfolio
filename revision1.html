@@ -4,6 +4,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <title>Document</title>
     <link rel="stylesheet" href="revision1.css">
 </head>
@@ -16,7 +18,65 @@
     
     </div>
     <div class="sec1">
-        <h1>COLONI</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://i.pinimg.com/736x/1a/ad/13/1aad1397a89de11a1cc6bb7275b036a8.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://i.pinimg.com/736x/b3/84/3e/b3843e5f576fd59ad2460f0ba594106a.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://i.pinimg.com/736x/70/c7/44/70c7446d478bb613532140d0e1250895.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://i.pinimg.com/736x/b8/3e/07/b83e07b6c757e00f22acbf167f817181.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://i.pinimg.com/736x/1a/37/09/1a3709ac23879652ce0ac0f8a0d07bcc.jpg" alt="">
+                </div>
+                
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
     </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 20, // Adjust for smaller screens
+            centeredSlides: true,
+            grabCursor: true,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                600: {
+                    slidesPerView: 2, // Medium screens
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: 3, // Tablets
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 4, // Larger screens
+                    spaceBetween: 50,
+                },
+            },
+        });
+    </script>
 </body>
 </html>
