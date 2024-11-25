@@ -49,7 +49,7 @@ main{
     backdrop-filter: blur( 11px );
     top: 0;
     left: -100%;
-    z-index: 100;
+    z-index: 205;
     padding: 3rem;
     overflow: hidden;
 }
@@ -134,10 +134,11 @@ nav{
     justify-content: end;
     gap: 2rem;
     /* mix-blend-mode: difference; */
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     /* text-align: center; */
     background: rgba( 255, 255, 255, 0 );
     backdrop-filter: blur( 8.5px );
+    /* background-color: #9e6832bd; */
     z-index: 200;
 }
 nav a{
@@ -145,6 +146,10 @@ nav a{
     color: #fff;
     font-size: 1rem;
     font-family: samsung;
+}
+nav i{
+    color: #fff;
+    font-size: 2rem;
 }
 #minicircle{
     width: 20px;
@@ -193,10 +198,11 @@ nav a{
 .herosection .contents h1{
     font-family: tommyb;
     font-size: 6vw;
-    font-weight: 100;
+    font-weight: 600;
 }
 .herosection .contents .srma{
     position: relative;
+    font-weight: 300;
 }
 .herosection .contents .srma span{
     position: absolute;
@@ -302,7 +308,7 @@ nav a{
     height: 140%;
     border: 1px solid #fff;
 }
-.section2 .skill a, .section2 .skill p{
+.section2 .skill a, .section2 .skill i{
     text-decoration: none;
     font-family: tommyr;
     font-size: 5vw;
@@ -313,10 +319,12 @@ nav a{
     color: #fffbf4;
     font-weight: 100;
 }
-.section2 .skill p{
-    font-size: 1.2vw;
-    font-family: editorial;
+.section2 .skill i{
+    opacity: 0;
+    margin-right: 2rem;
+    transition: all 0.3s ease;
 }
+
 /* .section2 .skill a::selection {
     color: #111;
     background: #fffbf4;
@@ -326,8 +334,10 @@ nav a{
         margin-left: 2rem;
         color: red;
     }
-    p{
+    i{
         color: red;
+        margin-right: 0rem;
+        opacity: 1;
     }
 }
 .section2 .skill:hover{
@@ -365,7 +375,7 @@ nav a{
     line-height: 1.6rem;
 }
 .Services .skills{
-    height: 550px;
+    height: 480px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -597,7 +607,7 @@ nav a{
     .herosection .cover .contents .Author{
         /* background-color: #3b3b3b; */
         width: 100%;
-        padding-left: 2vw;
+        padding-left: 2.5vw;
         gap: 0;
     }
     .herosection .cover .contents h1{
@@ -605,7 +615,7 @@ nav a{
         font-size: 9.8vw;
         text-align: center;
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 1rem;
         /* background-color: red; */
     }
     .herosection .contents .srma span{
@@ -616,7 +626,7 @@ nav a{
     }
     .herosection .contents p{
         font-size: 4vw;
-        text-align: justify;
+        text-align: left;
         padding: 0 0.7rem;
         line-height: 6vw;
         letter-spacing: 0.01rem;
@@ -682,4 +692,42 @@ nav a{
     .Services .skills .skill-2, .Services .skills .skill-3{
         display: none;
     }
+
+    .Projects .project-2, .Projects .project-3{
+        display: none;
+    }
+
+
+
+
+
+    /* Footer */
+    .Footer{
+        padding-top: 25vw;
+    }
+
+    .Footer h1{
+        font-size: 9vw;
+        line-height: 16vw;
+    }
+    .Footer h1 span{
+        font-size: 9.5vw;
+    }
+    
+    .Footer .foot{
+        padding: 5vw 0;
+    }
+    
+    .Footer .foots{
+        display: flex;
+        justify-content: space-between;
+    }
+    .Footer .foots p{
+        font-size: 3.2vw;
+    }
+    
+    .Footer .foots p a{
+        color: #db8d34;
+    }
+    
 }
