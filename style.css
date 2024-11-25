@@ -150,6 +150,7 @@ nav a{
 nav i{
     color: #fff;
     font-size: 2rem;
+    cursor: pointer;
 }
 #minicircle{
     width: 20px;
@@ -576,6 +577,50 @@ nav i{
 
 
 @media all and (max-width: 600px){
+    
+    nav{
+        padding: 1rem 2rem;
+    }
+    nav i{
+        font-size: 1.7rem;
+    }
+    .menus{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: rgb(0, 0, 0);
+        backdrop-filter: blur( 11px );
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        padding: 3rem;
+    }
+    .menus .close{
+        display: flex;
+        justify-content: end;
+    }
+    .menus .close i{
+        font-size: 1.5rem;
+        padding: 0.5rem 0.6rem;
+    }
+    .menus .links{
+        padding: 50% 0;
+        gap: 2rem;
+    }
+    .menus .links .link{
+        width: 100%;
+        padding: 0;
+    
+    }
+    .menus .links .link a{
+        font-size: 3rem;
+    }
+    .menus .links .link i{
+        font-size: 3rem;
+    }
+
+
+
     .herosection{
         /* background-color: #3b3b3b; */
         padding: 0;
@@ -648,16 +693,15 @@ nav i{
     }
     .section2 .skill a{
         font-family: tommyb;
-        font-size: 8.5vw;
+        font-size: 8vw;
     }
     .section2 .skill:hover{
         a{
             margin-left: 1rem;
         }
     }
-    .section2 .skill p{
-        font-size: 2vw;
-        font-family: editorial;
+    .section2 .skill i{
+        font-size: 8vw;
     }
     .section2 .skill .work{
         display: none;
