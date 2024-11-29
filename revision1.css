@@ -1,117 +1,73 @@
-@font-face { font-family: Appleb; 
-    src: url('fonts/AppleBold.OTF'); 
-}
-@font-face { font-family: Applem; 
-    src: url('fonts/AppleMedium.OTF'); 
-}
-@font-face { font-family: Appler; 
-    src: url('fonts/AppleRegilar.OTF'); 
-}
-@font-face { font-family: Samsung; 
+@font-face { font-family: samsung; 
     src: url('fonts/samsungsharpsans-medium_v2.ttf'); 
-}
-@font-face { font-family: ppb; 
-    src: url('fonts/PPMori-SemiBold.otf'); 
-}
-@font-face { font-family: ppr; 
-    src: url('fonts/PPMori-Regular.otf'); 
-}
-@font-face { font-family: ppl; 
-    src: url('fonts/PPMori-Extralight.otf'); 
-}
-@font-face { font-family: editorial; 
-    src: url('fonts/EditorialNew-UltralightItalic.otf'); 
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+body{
+    height: 100vh;
+    width: 100%;
+}
+.page1{
     height: 100%;
     width: 100%;
-}
-.main{
-    height: 100vh;
-    width: 100vw;
-    background-color: #111;
-    /* background-color: #E9E9E9; */
-    /* background-color: #FFFFE4; */
-    padding: 0 5vw;
-    position: relative;
-    overflow: hidden;
-}
-.main .title{
-    width: 100%;
+    background-color: #f5efeb;
     display: flex;
-    align-items: end;
-    gap: 1rem;
-    position: absolute;
-    bottom: 0;
-    /* border-bottom: 1px solid #fff; */
-}
-.main .title h1{
-    font-family: Jost;
-    text-transform: uppercase;
-    font-size: 14rem;
-    line-height: 7rem;
-    color: #e9e9e967;
-}
-.main .title h3{
-    font-family: editorial;
-    font-size: 5rem;
-    line-height: 2.6rem;
-    color: #E9E9E9;
-}
-
-
-.sec1{
-    height: 100vh;
-    width: 100vw;
-    background-color: #141414;
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-.swiper {
-    height: 100vh;
+.page1 h1{
+    font-family: samsung;
+    font-weight: 900;
+    color: black;
+    font-size: 13vw;
+    opacity: 100%;
+    /* transition: all 0.3s ease; */
+}
+.page1 button{
+    border: none;
+    padding: 0.5rem 3rem;
+    font-family: samsung;
+    background-color: #fff;
+    font-size: 1.2vw;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.page1 button:active{
+    scale: 0.95;
+    background-color: #f1f1f1;
+}
+
+
+/* Page2 */
+.page2{
+    height: 100%;
+    width: 100%;
+    background-color: #f5efeb;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.swiper-wrapper {
-    display: flex;
-    align-items: center;
+.page2 .swiper {
+    width: 90%;
+    height: 600px;
+    /* background-color: red; */
+    /* margin-top: -5%; */
 }
 
-.swiper-slide {
-    height: 70%; /* Adjust the height for all screens */
-    max-width: 70%; /* Allow dynamic resizing */
-    border-radius: 1rem;
-    transition: transform 0.3s ease;
+.page2 .swiper-slide {
+    background-position: center;
+    background-size: cover;
 }
 
-.swiper-slide video{
-    height: 100%;
+.page2 .swiper-slide video {
+    display: block;
     width: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-}
-
-.swiper-slide-active {
-    transform: scale(1.1); /* Add a zoom effect to the active slide */
-}
-.swiper-button-next,
-.swiper-button-prev,
-.swiper-pagination {
-    display: none !important;
-}
-
-/* Responsive Design */
-@media all and (max-width: 600px) {
-    .swiper-slide {
-        height: 70%;
-        max-width: 85%; /* Use most of the screen width */
-    }
+    height: 100%;
+    /* border-radius: 0.5rem; */
 }
