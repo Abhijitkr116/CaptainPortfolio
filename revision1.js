@@ -21,47 +21,38 @@ button.addEventListener("click",()=>{
     
 })
 
+
 var swiper = new Swiper(".mySwiper", {
-    effect: "cube", // Cube effect
-    grabCursor: true, // Enable cursor grabbing
-    loop: true, // Infinite loop
-    cubeEffect: {
-        // shadow: true,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94
+    loop: true,
+    spaceBetween: 30, // Default space between slides
+    navigation: {
+        nextEl: ".swiper-button-next", // Right arrow
+        prevEl: ".swiper-button-prev", // Left arrow
     },
-    on: {
-        slideChangeTransitionEnd: function () {
-            // Pause all videos
-            const videos = document.querySelectorAll('.swiper-slide video');
-            videos.forEach((video) => {
-                video.pause();
-            });
-
-            // Play the active slide's video
-            const activeSlideVideo = document.querySelector('.swiper-slide-active video');
-            if (activeSlideVideo) {
-                activeSlideVideo.play();
-            }
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        // For small screens (up to 600px)
+        0: {
+            slidesPerView: 1, // Show 1 slide per view
+            spaceBetween: 10, // Reduced space between slides
         },
+        // For medium screens (up to 768px)
+        600: {
+            slidesPerView: 2, // Show 2 slides per view
+            spaceBetween: 20, // Medium spacing
+        },
+        // For large screens (up to 1024px)
+        768: {
+            slidesPerView: 3, // Show 3 slides per view
+            spaceBetween: 30, // Default spacing
+        },
+        // // For extra-large screens (above 1024px)
+        // 1024: {
+        //     slidesPerView: 4, // Show 4 slides per view
+        //     spaceBetween: 40, // Increased spacing
+        // },
     },
-});
-
-// Add event listeners to prevent interference when video ends
-document.querySelectorAll('.swiper-slide video').forEach((video) => {
-    // Ensure the video keeps looping (or handle reset)
-    video.addEventListener('ended', () => {
-        video.currentTime = 0; // Reset video to the beginning
-        video.play(); // Replay the video if loop is not enabled
-    });
-
-    // Ensure Swiper can swipe when interacting with video
-    video.addEventListener('touchstart', (e) => {
-        e.stopPropagation(); // Allow Swiper's touch events
-    });
-
-    video.addEventListener('mousedown', (e) => {
-        e.stopPropagation(); // Prevent conflicts with desktop mouse interactions
-    });
 });

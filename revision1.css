@@ -23,7 +23,7 @@ body{
     font-family: samsung;
     font-weight: 900;
     color: black;
-    font-size: 13vw;
+    font-size: 18vw;
     opacity: 100%;
     /* transition: all 0.3s ease; */
 }
@@ -51,23 +51,88 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.page2 .swiper {
-    width: 90%;
-    height: 600px;
-    /* background-color: red; */
-    /* margin-top: -5%; */
+.swiper {
+    width: 100%;
+    height: 100%;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-wrapper{
+    width: 100%;
+    height: 70%;
+    /* background-color: rgb(130, 106, 75); */
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.page2 .swiper-slide {
-    background-position: center;
-    background-size: cover;
-}
-
-.page2 .swiper-slide video {
+.swiper-slide video {
     display: block;
     width: 100%;
     height: 100%;
-    /* border-radius: 0.5rem; */
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.page2 .cntrl-1, 
+.page2 .cntrl-2 {
+    background-color: #111;
+    padding: 1rem; /* Reduced padding */
+    color: #f1f1f1;
+    border-radius: 0.5rem;
+    width: 2rem; /* Adjust width */
+    height: 2rem; /* Adjust height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+/* Specific positioning for each button */
+.page2 .cntrl-1 {
+    top: 50%;
+    right: 1rem; /* Adjust spacing */
+    transform: translateY(-50%);
+}
+
+.page2 .cntrl-2 {
+    top: 50%;
+    left: 1rem; /* Adjust spacing */
+    transform: translateY(-50%);
+}
+
+/* Resize the icons */
+.page2 .cntrl-1::after, 
+.page2 .cntrl-2::after {
+    font-size: 0.8rem; /* Decrease the size of the arrow icon */
+    color: #f1f1f1; /* Icon color */
+}
+
+
+@media all and (max-width: 600px){
+    .page2 .cntrl-1, 
+    .page2 .cntrl-2{
+    display: none;
+}
 }
