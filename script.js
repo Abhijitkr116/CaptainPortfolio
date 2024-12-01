@@ -189,39 +189,53 @@ t1.from("nav",{
     duration: 1.5,
     opacity: 0
 })
-t1.to(".herosection .conts .dot", {
-    y: "-200%",
-    duration: 1
-},"same")
-t1.to(".herosection .conts .conts-1", {
-    x: "-100%",
-    duration: 5,
-    backgroundColor: "#283618"
-},"same")
-t1.to(".herosection .conts .conts-2", {
-    x: "100%",
-    duration: 5,
-    backgroundColor: "#283618"
-},"same")
-t1.from(".herosection .h2-1", {
-    y: "50%",
-    duration: 2,
-    stagger: 1,
-    opacity: 0,
-    delay: -2
-},"h21")
-t1.from(".herosection .h2-2", {
-    y: "-50%",
-    duration: 2,
-    stagger: 1,
-    opacity: 0,
-    delay: -2
-},"h21")
-t1.to(".herosection h2 span", {
-    fontSize: "7vw",
-    color: "#a8bd64",
-    delay: -1
+
+t1.to(".herosection .frame",{
+    // y: -800,
+    duration: 3,
+    opacity: 0
 })
+// t1.from(".contents p",{
+//     y: -30,
+//     duration: 1.2,
+//     opacity: 0,
+//     delay: -1,
+//     opacity: 0
+// })
+
+// t1.to(".herosection .conts .dot", {
+//     y: "-200%",
+//     duration: 1
+// },"same")
+// t1.to(".herosection .conts .conts-1", {
+//     x: "-100%",
+//     duration: 5,
+//     backgroundColor: "#283618"
+// },"same")
+// t1.to(".herosection .conts .conts-2", {
+//     x: "100%",
+//     duration: 5,
+//     backgroundColor: "#283618"
+// },"same")
+// t1.from(".herosection .h2-1", {
+//     y: "50%",
+//     duration: 2,
+//     stagger: 1,
+//     opacity: 0,
+//     delay: -2
+// },"h21")
+// t1.from(".herosection .h2-2", {
+//     y: "-50%",
+//     duration: 2,
+//     stagger: 1,
+//     opacity: 0,
+//     delay: -2
+// },"h21")
+// t1.to(".herosection h2 span", {
+//     fontSize: "7vw",
+//     color: "#a8bd64",
+//     delay: -1
+// })
 
 var t2 = gsap.timeline();
 

@@ -171,6 +171,20 @@ nav i{
     /* background-color: #050301; */
     overflow: hidden;
     padding: 0 5vw;
+    position: relative;
+}
+
+.herosection .frame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 120;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    backdrop-filter: blur( 6.5px ); 
+    transform: translate(-50%,-50%);
 }
 
 .herosection .cover{
