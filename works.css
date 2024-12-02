@@ -14,7 +14,7 @@ body{
     width: 100%;
 }
 main{
-    background-color: #050301;
+    background-color: #f5efeb;
 }
 
 .menus{
@@ -152,7 +152,8 @@ nav i{
     font-family: samsung;
     font-weight: 900;
     color: black;
-    font-size: 18vw;
+    font-size: 20vw;
+    line-height: 20vw;
     opacity: 100%;
     /* transition: all 0.3s ease; */
 }
@@ -165,6 +166,7 @@ nav i{
     border-radius: 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 .page1 button:active{
     scale: 0.95;
@@ -187,7 +189,7 @@ nav i{
     text-transform: lowercase;
     font-size: 7vw;
     line-height: 8.5vw;
-    margin-bottom: -4rem;
+    margin-bottom: -5%;
 }
 .page2-contnet h1 span{
     font-family: editorial;
@@ -287,6 +289,30 @@ nav i{
     color: #f1f1f1; /* Icon color */
 }
 
+.p3-content{
+    /* background-color: #fee4e4; */
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+.p3-content h1{
+    margin-bottom: 0;
+    width: 90%;
+}
+.p3-content p{
+    font-family: editorial;
+    margin-bottom: -5%;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 70%;
+}
+.page3 .swiper-slide video {
+    display: block;
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
 
 
 /* Footer */
@@ -362,6 +388,65 @@ nav i{
 
 @media all and (max-width: 600px){
 
+    /* Navbar and links */
+    nav{
+        padding: 1rem 2rem;
+    }
+    nav i{
+        font-size: 1.7rem;
+    }
+    .menus{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        background: rgb(0, 0, 0);
+        backdrop-filter: blur( 11px );
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        padding: 3rem;
+    }
+    .menus .close{
+        display: flex;
+        justify-content: end;
+    }
+    .menus .close i{
+        font-size: 1.5rem;
+        padding: 0.5rem 0.6rem;
+    }
+    .menus .links{
+        padding: 50% 0;
+        gap: 2rem;
+    }
+    .menus .links .link{
+        width: 100%;
+        padding: 0;
+    
+    }
+    .menus .links .link a{
+        font-size: 3rem;
+    }
+    .menus .links .link i{
+        font-size: 3rem;
+    }
+
+
+
+    .page1 h1{
+        font-family: samsung;
+        font-weight: 900;
+        color: black;
+        font-size: 22vw;
+        opacity: 100%;
+        /* transition: all 0.3s ease; */
+    }
+    .page1 button{
+        margin-top: 5%;
+        padding: 0.4rem 2rem;
+        font-size: 2.5vw;
+    }
+
+
     .page2-contnet h1{
         width: 85%;
         font-size: 10.5vw;
@@ -385,6 +470,19 @@ nav i{
 }
 
 
+.p3-content h1{
+    width: 100%;
+}
+.p3-content p{
+    font-family: editorial;
+    margin-bottom: 0;
+    margin-top: 18%;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 70%;
+}
+
+
 /* Footer */
 .Footer{
     padding-top: 25vw;
@@ -405,6 +503,7 @@ nav i{
 .Footer .foots{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 5%;
 }
 .Footer .foots p{
     font-size: 3.2vw;

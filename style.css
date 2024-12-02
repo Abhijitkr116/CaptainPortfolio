@@ -779,6 +779,7 @@ nav i{
     .Footer .foots{
         display: flex;
         justify-content: space-between;
+        padding-bottom: 5%;
     }
     .Footer .foots p{
         font-size: 3.2vw;

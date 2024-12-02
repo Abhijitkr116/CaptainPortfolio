@@ -147,6 +147,42 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
+var swiper = new Swiper(".mySwiper-1", {
+    loop: true,
+    spaceBetween: 30, // Default space between slides
+    navigation: {
+        nextEl: ".swiper-button-next", // Right arrow
+        prevEl: ".swiper-button-prev", // Left arrow
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        // For small screens (up to 600px)
+        0: {
+            slidesPerView: 1, // Show 1 slide per view
+            spaceBetween: 10, // Reduced space between slides
+        },
+        // For medium screens (up to 768px)
+        600: {
+            slidesPerView: 1, // Show 2 slides per view
+            spaceBetween: 20, // Medium spacing
+        },
+        // For large screens (up to 1024px)
+        768: {
+            slidesPerView: 2, // Show 3 slides per view
+            spaceBetween: 30, // Default spacing
+        },
+        // // For extra-large screens (above 1024px)
+        // 1024: {
+        //     slidesPerView: 4, // Show 4 slides per view
+        //     spaceBetween: 40, // Increased spacing
+        // },
+    },
+});
+
+
 var t1 = gsap.timeline();
 
 t1.from("nav",{
