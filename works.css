@@ -222,7 +222,7 @@ nav i{
 }
 .swiper-wrapper{
     width: 100%;
-    height: 70%;
+    height: 75%;
     /* background-color: rgb(130, 106, 75); */
 }
 .swiper-slide {
@@ -239,6 +239,13 @@ nav i{
     display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.swiper-slide iframe {
+    width: 100%;
+    height: 85%;
     object-fit: cover;
     border-radius: 1rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
