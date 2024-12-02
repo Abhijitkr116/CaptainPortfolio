@@ -167,6 +167,20 @@ t1.from(".page1 button",{
     opacity: 0
 })
 
+gsap.from(".page2-contnet h1",{
+    y: "40%",
+    duration: 3,
+    opacity: 0,
+    ease: Expo.easeInOut,
+    scrollTrigger:{
+        trigger: ".page2-contnet",
+        scroller: "main",
+        color: "#red",
+        scrub:2,
+        start: "top 160%",
+    }
+})
+
 var t2 = gsap.timeline();
 
 

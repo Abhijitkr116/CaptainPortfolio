@@ -1,6 +1,9 @@
 @font-face { font-family: samsung; 
     src: url('fonts/samsungsharpsans-medium_v2.ttf'); 
 }
+@font-face { font-family: editorial; 
+    src: url('fonts/EditorialNew-UltralightItalic.otf'); 
+}
 *{
     margin: 0;
     padding: 0;
@@ -169,12 +172,38 @@ nav i{
 }
 
 
+.page2-contnet{
+    background-color: #f5efeb;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 100;
+} 
+.page2-contnet h1{
+    /* font-family: editorial; */
+    font-family: samsung;
+    width: 75%;
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 7vw;
+    line-height: 8.5vw;
+    margin-bottom: -4rem;
+}
+.page2-contnet h1 span{
+    font-family: editorial;
+    text-transform: none;
+    font-size: 9vw;
+    color: #800080;
+
+}
+
 /* Page2 */
 .page2{
     height: 100vh;
     width: 100%;
     background-color: #f5efeb;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -187,6 +216,7 @@ nav i{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #f6dbc9; */
 }
 .swiper-wrapper{
     width: 100%;
@@ -331,10 +361,29 @@ nav i{
 
 
 @media all and (max-width: 600px){
+
+    .page2-contnet h1{
+        width: 85%;
+        font-size: 10.5vw;
+        line-height: 12vw;
+        margin-bottom: -4rem;
+    }
+    .page2-contnet h1 span{
+        font-family: editorial;
+        text-transform: none;
+        font-size: 12vw;
+        color: #800080;
+    
+    }
+
     .page2 .cntrl-1, 
     .page2 .cntrl-2{
     display: none;
 }
+.swiper-slide:hover{
+    transform: scale(1.01);
+}
+
 
 /* Footer */
 .Footer{
