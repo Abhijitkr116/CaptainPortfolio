@@ -119,7 +119,7 @@ new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
 const t1 = gsap.timeline();
 
 t1.from("nav", { y: -30, duration: 1.5, opacity: 0 });
-t1.from(".page1 h1", { y: -30, duration: 1.5, delay: -1, opacity: 0 });
+t1.from(".page1 h1", { y: -30, duration: 1.5, opacity: 0 });
 t1.from(".page1 button", { y: 30, duration: 1.5, delay: -1, opacity: 0 });
 
 gsap.from(".p2-content h1", {
@@ -161,6 +161,18 @@ gsap.from(".p3-content .caption", {
     }
 });
 
+gsap.from(".Footer", {
+    backgroudColor: "#dddddd",
+    duration: 2,
+    opacity: 0,
+    ease: Expo.easeInOut,
+    scrollTrigger: {
+        trigger: ".Footer",
+        scroller: "main",
+        scrub: 2,
+        start: "top 180%"
+    }
+});
 gsap.from(".Footer .content", {
     y: "-30%",
     duration: 2,
