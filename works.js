@@ -86,7 +86,7 @@ button.addEventListener("click", () => {
     buttonFlag = 1 - buttonFlag;
 });
 
-const swiperSettings = {
+const baseSwiperSettings = {
     loop: true,
     spaceBetween: 30,
     navigation: {
@@ -99,14 +99,23 @@ const swiperSettings = {
     },
     breakpoints: {
         0: { slidesPerView: 1, spaceBetween: 10 },
-        600: { slidesPerView: 1, spaceBetween: 20 },
-        768: { slidesPerView: 2, spaceBetween: 30 }
+        600: { slidesPerView: 1, spaceBetween: 20 }
     }
 };
 
-new Swiper(".mySwiper", swiperSettings);
-new Swiper(".mySwiper-1", swiperSettings);
+new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
+    breakpoints: {
+        ...baseSwiperSettings.breakpoints,
+        768: { slidesPerView: 3, spaceBetween: 30 }
+    }
+}));
 
+new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
+    breakpoints: {
+        ...baseSwiperSettings.breakpoints,
+        768: { slidesPerView: 2, spaceBetween: 30 }
+    }
+}));
 const t1 = gsap.timeline();
 
 t1.from("nav", { y: -30, duration: 1.5, opacity: 0 });

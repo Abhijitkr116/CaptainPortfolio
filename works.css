@@ -315,7 +315,7 @@ nav i{
 .page3 .swiper-slide video {
     display: block;
     width: 100%;
-    height: 85%;
+    height: 70%;
     object-fit: cover;
     border-radius: 1rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
@@ -476,11 +476,13 @@ nav i{
     transform: scale(1.01);
 }
 
-
 .swiper-slide video {
     display: block;
     width: 100%;
     height: 100%;
+}
+.page3 .swiper-slide video{
+    height: 40%;
 }
 
 .p3-content h1{
