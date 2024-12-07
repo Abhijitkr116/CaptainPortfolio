@@ -22,7 +22,6 @@ main{
     width: 100%;
     position: absolute;
     background: rgb(0, 0, 0);
-    backdrop-filter: blur( 11px );
     top: 0;
     left: -100%;
     z-index: 205;
