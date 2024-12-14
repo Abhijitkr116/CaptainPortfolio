@@ -111,26 +111,55 @@ function menu() {
 
 menu();
 
+const baseSwiperSettings = {
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+    breakpoints: {
+        0: { slidesPerView: 1, spaceBetween: 10 },
+        600: { slidesPerView: 1, spaceBetween: 20 }
+    }
+};
 
+new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
+    breakpoints: {
+        ...baseSwiperSettings.breakpoints,
+        768: { slidesPerView: 3, spaceBetween: 30 }
+    }
+}));
 
-const videos = [
-    document.getElementById('video1'),
-    document.getElementById('video2'),
-    document.getElementById('video3')
-];
+new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
+    breakpoints: {
+        ...baseSwiperSettings.breakpoints,
+        768: { slidesPerView: 2, spaceBetween: 30 }
+    }
+}));
 
-videos.forEach((video, index) => {
-    video.addEventListener('ended', () => {
-        if (index < videos.length - 1) {
-            videos[index + 1].play();
-        } else {
-            videos[0].play();
-        }
-    });
-});
+// const videos = [
+//     document.getElementById('video1'),
+//     document.getElementById('video2'),
+//     document.getElementById('video3')
+// ];
 
-// Start playing the first video automatically
-videos[0].play();
+// videos.forEach((video, index) => {
+//     video.addEventListener('ended', () => {
+//         if (index < videos.length - 1) {
+//             videos[index + 1].play();
+//         } else {
+//             videos[0].play();
+//         }
+//     });
+// });
+
+// // Start playing the first video automatically
+// videos[0].play();
 
 function circleMouseFollower(){
     window.addEventListener("mousemove",function(dets){
@@ -186,13 +215,13 @@ var t1 = gsap.timeline();
 
 t1.from("nav",{
     y: -30,
-    duration: 1.5,
+    duration: 1,
     opacity: 0
 })
 
 t1.to(".herosection .frame",{
     // y: -800,
-    duration: 3,
+    duration: 2,
     opacity: 0
 })
 // t1.from(".contents p",{
