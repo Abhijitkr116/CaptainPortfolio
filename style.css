@@ -365,7 +365,7 @@ nav i{
 .Services{
     min-height: 100vh;
     width: 100%;
-    padding: 4vw 7vw;
+    padding: 4vw 2vw;
     /* background-color: #dda15e; */
     background-color: #111;
     overflow: hidden;
@@ -390,16 +390,16 @@ nav i{
     line-height: 1.6rem;
 }
 .Services .skills{
-    height: 480px;
+    height: 650px;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .Services .skills .skilli{
     height: 100%;
-    width: 32%;
+    width: 100%;
     background-color: #5454547b;
-    /* background-color: #606c38; */
+    /* background-color: #c2caa6; */
     border-radius: 0.5rem;
     padding: 2rem 1.5rem;
     /* color: #fefefe; */
@@ -410,6 +410,7 @@ nav i{
     font-family: samsung;
     margin-bottom: 0.8rem;
     /* color: #606c38; */
+    text-align: start;
 }
 .Services .skills .skilli .images{
     height: 40px;
@@ -431,6 +432,7 @@ nav i{
     font-family: poppins;
     letter-spacing: 0.05rem;
     line-height: 1.5rem;
+    text-align: start;
 }
 
 
@@ -460,12 +462,8 @@ nav i{
     font-weight: 300;
     letter-spacing: 0.03rem;
     text-transform: capitalize;
+text-align: start;
 }
-.Services .skills .skilli ul li::selection {
-    color: #111;
-    background: #fffbf4;
-}
-
 
 
 /* Projects */
@@ -544,8 +542,8 @@ nav i{
 .swiper-slide:hover{
     transform: scale(1.05);
 }
-.project .cntrl-1, 
-.project .cntrl-2 {
+.swiper .cntrl-1, 
+.swiper .cntrl-2 {
     background-color: #111;
     padding: 1rem; /* Reduced padding */
     color: #f1f1f1;
@@ -560,21 +558,21 @@ nav i{
 }
 
 /* Specific positioning for each button */
-.project .cntrl-1 {
+.swiper .cntrl-1 {
     top: 50%;
     right: 1rem; /* Adjust spacing */
     transform: translateY(-50%);
 }
 
-.project .cntrl-2 {
+.swiper .cntrl-2 {
     top: 50%;
     left: 1rem; /* Adjust spacing */
     transform: translateY(-50%);
 }
 
 /* Resize the icons */
-.project .cntrl-1::after, 
-.project .cntrl-2::after {
+.swiper .cntrl-1::after, 
+.swiper .cntrl-2::after{
     font-size: 0.8rem; /* Decrease the size of the arrow icon */
     color: #f1f1f1; /* Icon color */
 }
@@ -798,6 +796,7 @@ nav i{
         padding: 5vw 2vw;
         /* background-color: #dda15e; */
     }
+
     .Services .heading h1{
         font-size: 9vw;
     }
@@ -808,24 +807,13 @@ nav i{
         margin-top: 0.5rem;
         color: #999;
     }
-    .Services .skills .skill-1{
-        height: 100%;
-        width: 100%;
-        background-color: #5454547b;
-        /* background-color: #606c38; */
-        border-radius: 0.5rem;
-        padding: 2rem 1.5rem;
-        /* color: #fefefe; */
-        color: #fefefe;
+
+    .swiper-slide:hover{
+        transform: scale(0.98);
     }
-    .Services .skills .skill-2, .Services .skills .skill-3{
+    .swiper .cntrl{
         display: none;
     }
-
-    .Projects .project-2, .Projects .project-3{
-        display: none;
-    }
-
 
 
 

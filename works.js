@@ -73,6 +73,54 @@ function circleMouseFollower() {
 
 circleMouseFollower();
 
+// Get all video elements inside the swiper container
+const videos = document.querySelectorAll(".mySwiper video");
+
+// Prevent Swiper's interaction while clicking or interacting with videos
+videos.forEach((video) => {
+    // Disable Swiper interaction when clicking on the video
+    video.addEventListener("touchstart", (e) => {
+        e.stopPropagation();
+        video.closest(".swiper-container").swiper.allowTouchMove = false;
+    });
+    video.addEventListener("mousedown", (e) => {
+        e.stopPropagation();
+        video.closest(".swiper-container").swiper.allowTouchMove = false;
+    });
+
+    // Re-enable Swiper interaction when interaction ends
+    video.addEventListener("touchend", () => {
+        video.closest(".swiper-container").swiper.allowTouchMove = true;
+    });
+    video.addEventListener("mouseup", () => {
+        video.closest(".swiper-container").swiper.allowTouchMove = true;
+    });
+
+    // Toggle play/pause on video click
+    video.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent swiper click events
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+});
+
+// Optional: Handle video chaining (autoplay next video when current one ends)
+videos.forEach((video, index) => {
+    video.addEventListener("ended", () => {
+        if (index < videos.length - 1) {
+            videos[index + 1].play();
+        } else {
+            videos[0].play(); // Loop back to the first video
+        }
+    });
+});
+
+
+
+
 const button = document.querySelector("button");
 const text = document.querySelector("h1");
 let buttonFlag = 0;

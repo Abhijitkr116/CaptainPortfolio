@@ -131,35 +131,17 @@ const baseSwiperSettings = {
 new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
     breakpoints: {
         ...baseSwiperSettings.breakpoints,
-        768: { slidesPerView: 3, spaceBetween: 30 }
+        768: { slidesPerView: 2, spaceBetween: 30 }
     }
 }));
 
 new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
     breakpoints: {
         ...baseSwiperSettings.breakpoints,
-        768: { slidesPerView: 2, spaceBetween: 30 }
+        768: { slidesPerView: 3, spaceBetween: 30 }
     }
 }));
 
-// const videos = [
-//     document.getElementById('video1'),
-//     document.getElementById('video2'),
-//     document.getElementById('video3')
-// ];
-
-// videos.forEach((video, index) => {
-//     video.addEventListener('ended', () => {
-//         if (index < videos.length - 1) {
-//             videos[index + 1].play();
-//         } else {
-//             videos[0].play();
-//         }
-//     });
-// });
-
-// // Start playing the first video automatically
-// videos[0].play();
 
 function circleMouseFollower(){
     window.addEventListener("mousemove",function(dets){
@@ -224,60 +206,8 @@ t1.to(".herosection .frame",{
     duration: 2,
     opacity: 0
 })
-// t1.from(".contents p",{
-//     y: -30,
-//     duration: 1.2,
-//     opacity: 0,
-//     delay: -1,
-//     opacity: 0
-// })
-
-// t1.to(".herosection .conts .dot", {
-//     y: "-200%",
-//     duration: 1
-// },"same")
-// t1.to(".herosection .conts .conts-1", {
-//     x: "-100%",
-//     duration: 5,
-//     backgroundColor: "#283618"
-// },"same")
-// t1.to(".herosection .conts .conts-2", {
-//     x: "100%",
-//     duration: 5,
-//     backgroundColor: "#283618"
-// },"same")
-// t1.from(".herosection .h2-1", {
-//     y: "50%",
-//     duration: 2,
-//     stagger: 1,
-//     opacity: 0,
-//     delay: -2
-// },"h21")
-// t1.from(".herosection .h2-2", {
-//     y: "-50%",
-//     duration: 2,
-//     stagger: 1,
-//     opacity: 0,
-//     delay: -2
-// },"h21")
-// t1.to(".herosection h2 span", {
-//     fontSize: "7vw",
-//     color: "#a8bd64",
-//     delay: -1
-// })
 
 var t2 = gsap.timeline();
-
-// var t2 = gsap.timeline({
-//     scrollTrigger:{
-//         trigger: ".About",
-//         scroller: "main",
-//         markers: true,
-//         start: "top 50%",
-//         end: "top -80%",
-//         scrub: 2
-//     }
-// })
 
 gsap.from(".About h1 .child",{
     y: "-150%",
