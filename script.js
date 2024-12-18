@@ -116,31 +116,85 @@ const baseSwiperSettings = {
     spaceBetween: 30,
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+        prevEl: ".swiper-button-prev",
     },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true
+        clickable: true,
     },
     breakpoints: {
         0: { slidesPerView: 1, spaceBetween: 10 },
-        600: { slidesPerView: 1, spaceBetween: 20 }
-    }
+        600: { slidesPerView: 1, spaceBetween: 20 },
+    },
 };
 
-new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
+const swiper1 = new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
     breakpoints: {
         ...baseSwiperSettings.breakpoints,
-        768: { slidesPerView: 2, spaceBetween: 30 }
-    }
+        768: { slidesPerView: 2, spaceBetween: 30 },
+    },
 }));
 
-new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
+const swiper2 = new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
     breakpoints: {
         ...baseSwiperSettings.breakpoints,
-        768: { slidesPerView: 3, spaceBetween: 30 }
-    }
+        768: { slidesPerView: 3, spaceBetween: 30 },
+    },
 }));
+
+// Disable swiper scrolling for videos in desktop mode
+const handleVideoInteractions = () => {
+    const videos = document.querySelectorAll(".swiper-slide video");
+    videos.forEach((video) => {
+        video.addEventListener("mouseenter", () => {
+            if (window.innerWidth > 768) {
+                swiper2.allowSlideNext = false;
+                swiper2.allowSlidePrev = false;
+            }
+        });
+
+        video.addEventListener("mouseleave", () => {
+            if (window.innerWidth > 768) {
+                swiper2.allowSlideNext = true;
+                swiper2.allowSlidePrev = true;
+            }
+        });
+    });
+};
+
+handleVideoInteractions();
+
+// Optional: Reinitialize on window resize to ensure responsiveness
+window.addEventListener("resize", handleVideoInteractions);
+
+let currentPlayingVideo = null; // To keep track of the currently playing video
+
+const videos = document.querySelectorAll(".swiper-slide video");
+
+videos.forEach((video) => {
+    video.addEventListener("play", () => {
+        // Pause the currently playing video if it's not the same as the new one
+        if (currentPlayingVideo && currentPlayingVideo !== video) {
+            currentPlayingVideo.pause();
+            currentPlayingVideo.muted = true; // Mute the previous video
+        }
+
+        // Set the current video as the playing one and unmute it
+        currentPlayingVideo = video;
+        video.muted = false;
+    });
+
+    video.addEventListener("pause", () => {
+        // Optionally mute the video when it's paused
+        video.muted = true;
+    });
+
+    video.addEventListener("ended", () => {
+        // Mute the video when it ends
+        video.muted = true;
+        currentPlayingVideo = null; // Reset the current playing video
+    });
+});
 
 
 function circleMouseFollower(){

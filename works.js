@@ -73,97 +73,111 @@ function circleMouseFollower() {
 
 circleMouseFollower();
 
-// Get all video elements inside the swiper container
-const videos = document.querySelectorAll(".mySwiper video");
-
-// Prevent Swiper's interaction while clicking or interacting with videos
-videos.forEach((video) => {
-    // Disable Swiper interaction when clicking on the video
-    video.addEventListener("touchstart", (e) => {
-        e.stopPropagation();
-        video.closest(".swiper-container").swiper.allowTouchMove = false;
-    });
-    video.addEventListener("mousedown", (e) => {
-        e.stopPropagation();
-        video.closest(".swiper-container").swiper.allowTouchMove = false;
-    });
-
-    // Re-enable Swiper interaction when interaction ends
-    video.addEventListener("touchend", () => {
-        video.closest(".swiper-container").swiper.allowTouchMove = true;
-    });
-    video.addEventListener("mouseup", () => {
-        video.closest(".swiper-container").swiper.allowTouchMove = true;
-    });
-
-    // Toggle play/pause on video click
-    video.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent swiper click events
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
-    });
-});
-
-// Optional: Handle video chaining (autoplay next video when current one ends)
-videos.forEach((video, index) => {
-    video.addEventListener("ended", () => {
-        if (index < videos.length - 1) {
-            videos[index + 1].play();
-        } else {
-            videos[0].play(); // Loop back to the first video
-        }
-    });
-});
-
-
-
-
-const button = document.querySelector("button");
-const text = document.querySelector("h1");
-let buttonFlag = 0;
-
-button.addEventListener("click", () => {
-    gsap.to(text, {
-        duration: 2.5,
-        color: buttonFlag === 0 ? "red" : "black",
-        ease: "elastic.out(1, 0.6)"
-    });
-    buttonFlag = 1 - buttonFlag;
-});
-
 const baseSwiperSettings = {
     loop: true,
     spaceBetween: 30,
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+        prevEl: ".swiper-button-prev",
     },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true
+        clickable: true,
     },
     breakpoints: {
         0: { slidesPerView: 1, spaceBetween: 10 },
-        600: { slidesPerView: 1, spaceBetween: 20 }
-    }
+        600: { slidesPerView: 1, spaceBetween: 20 },
+    },
 };
 
-new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
+const swiper1 = new Swiper(".mySwiper", Object.assign({}, baseSwiperSettings, {
     breakpoints: {
         ...baseSwiperSettings.breakpoints,
-        768: { slidesPerView: 3, spaceBetween: 30 }
-    }
+        768: { slidesPerView: 3, spaceBetween: 30 },
+    },
 }));
 
-new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
+const swiper2 = new Swiper(".mySwiper-1", Object.assign({}, baseSwiperSettings, {
     breakpoints: {
         ...baseSwiperSettings.breakpoints,
-        768: { slidesPerView: 2, spaceBetween: 30 }
-    }
+        768: { slidesPerView: 2, spaceBetween: 30 },
+    },
 }));
+
+// Common function to disable/enable swiper scrolling for videos
+const handleVideoInteractions = (swiper) => {
+    const videos = swiper.el.querySelectorAll("video");
+
+    videos.forEach((video) => {
+        video.addEventListener("mouseenter", () => {
+            if (window.innerWidth > 768) {
+                swiper.allowSlideNext = false;
+                swiper.allowSlidePrev = false;
+            }
+        });
+
+        video.addEventListener("mouseleave", () => {
+            if (window.innerWidth > 768) {
+                swiper.allowSlideNext = true;
+                swiper.allowSlidePrev = true;
+            }
+        });
+    });
+};
+
+// Apply video interaction handling for both sliders
+handleVideoInteractions(swiper1);
+handleVideoInteractions(swiper2);
+
+// Reapply interaction handling on window resize
+window.addEventListener("resize", () => {
+    handleVideoInteractions(swiper1);
+    handleVideoInteractions(swiper2);
+});
+
+// Manage video playback across both sliders
+let currentPlayingVideo = null; // To keep track of the currently playing video
+
+const manageVideoPlayback = () => {
+    // Get all video elements across both sliders
+    const videos = document.querySelectorAll(".swiper-slide video");
+
+    videos.forEach((video) => {
+        video.addEventListener("play", () => {
+            // Pause the currently playing video if it's not the same as the new one
+            if (currentPlayingVideo && currentPlayingVideo !== video) {
+                currentPlayingVideo.pause();
+                currentPlayingVideo.muted = true; // Mute the previous video
+            }
+
+            // Set the current video as the playing one and unmute it
+            currentPlayingVideo = video;
+            video.muted = false;
+        });
+
+        video.addEventListener("pause", () => {
+            // Optionally mute the video when it's paused
+            video.muted = true;
+        });
+
+        video.addEventListener("ended", () => {
+            // Mute the video when it ends
+            video.muted = true;
+            currentPlayingVideo = null; // Reset the current playing video
+        });
+    });
+};
+
+// Apply playback management across both sliders
+manageVideoPlayback();
+
+// Reapply playback management on window resize to ensure responsiveness
+window.addEventListener("resize", manageVideoPlayback);
+
+
+
+
+
 const t1 = gsap.timeline();
 
 t1.from("nav", { y: -30, duration: 1.5, opacity: 0 });
