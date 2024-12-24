@@ -815,6 +815,9 @@ text-align: start;
         display: none;
     }
 
+    .Projects h1{
+        display: none;
+    }
 
 
 
