@@ -47,32 +47,6 @@ init();
 
 
 
-// function menu(){
-//     let flag = 0;
-//     const close = document.querySelector(".ri-close-line"); 
-//     const menuPage = document.querySelector(".menus"); 
-//     const menu = document.querySelector("nav .menu"); 
-
-//     menu.addEventListener('click',()=>{
-//         console.log(flag);
-//         if(flag == 0){
-//             menuPage.style.left = "0";
-//             flag = 1;
-//         }
-        
-//     })
-//     close.addEventListener('click',()=>{
-//         console.log(flag);
-//         if(flag == 1){
-//             menuPage.style.left = "-100%";
-//             flag = 0;
-//         }
-//     })
-// }
-// menu();
-
-
-
 function menu() {
     let flag = 0;
     const close = document.querySelector(".ri-close-line");
@@ -257,8 +231,8 @@ t1.from("nav",{
 
 t1.to(".herosection .frame",{
     // y: -800,
-    duration: 2,
-    opacity: 0
+    duration: 0.8,
+    opacity: 0,
 })
 
 var t2 = gsap.timeline();

@@ -15,6 +15,7 @@ body{
 }
 main{
     background-color: #f5efeb;
+    position: relative;
 }
 
 .menus{
@@ -156,21 +157,6 @@ nav i{
     opacity: 100%;
     /* transition: all 0.3s ease; */
 }
-.page1 button{
-    border: none;
-    padding: 0.5rem 3rem;
-    font-family: samsung;
-    background-color: #fff;
-    font-size: 1.2vw;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-}
-.page1 button:active{
-    scale: 0.95;
-    background-color: #f1f1f1;
-}
 
 
 .page2-contnet{
@@ -178,7 +164,7 @@ nav i{
     display: grid;
     place-items: center;
     position: relative;
-    z-index: 100;
+    z-index: 99;
 } 
 .page2-contnet h1{
     /* font-family: editorial; */
@@ -218,6 +204,8 @@ nav i{
     justify-content: center;
     align-items: center;
     /* background-color: #f6dbc9; */
+    position: relative;
+    z-index: 100;
 }
 .swiper-wrapper{
     width: 100%;

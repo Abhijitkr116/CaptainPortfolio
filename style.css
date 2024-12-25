@@ -1,17 +1,6 @@
-@font-face { font-family: chillax; 
-    src: url('fonts/Chillax-Bold.otf'); 
-}
-@font-face { font-family: goli; 
-    src: url('fonts/Zain-Bold.ttf'); 
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @font-face { font-family: samsung; 
     src: url('fonts/samsungsharpsans-medium_v2.ttf'); 
-}
-@font-face { font-family: appleb; 
-    src: url('fonts/AppleBold.OTF'); 
-}
-@font-face { font-family: appler; 
-    src: url('fonts/AppleRegilar.OTF'); 
 }
 @font-face { font-family: editorial; 
     src: url('fonts/EditorialNew-UltralightItalic.otf'); 
